@@ -1,13 +1,27 @@
 const toggleButton = document.querySelector(".toggle");
 const closeButton = document.querySelector(".close-btn");
 const sideBar = document.querySelector(".sidebar");
+const box= document.querySelector(".box");
 
-toggleButton.addEventListener("click", opensideBar);
+toggleButton.addEventListener("click",() => {
+  sideBar.style.right = 0;
+});
 
-closeButton.addEventListener("click", () => {
+closeButton.addEventListener("click", (e) => {
+  console.log(e.target)
   sideBar.style.right = "-100%";
 });
 
-const opensideBar = () => {
-  sideBar.style.right = 0;
-};
+
+box.addEventListener("click", () => {
+const isRounded=box.classList.contains("rounded")
+console.log(isRounded)
+box.classList.toggle("rounded")
+
+// if (isRounded){
+//   box.classList.remove("rounded")
+// } else{
+//   box.classList.add("rounded")
+// }
+
+});
